@@ -1,4 +1,4 @@
-"""config URL Configuration
+"""app URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.1/topics/http/urls/
@@ -19,7 +19,6 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include("blog.urls")),
-    path('accounts/', include("autenticacion.urls")),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+                  path('admin/', admin.site.urls),
+                  path('accounts/', include("autenticacion.urls")),
+              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
