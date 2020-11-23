@@ -10,4 +10,5 @@
         {{ form|crispy }}
         <button type="submit" class="btn btn-success">Iniciar sesión!</button>
     </form>
+    <a href="{% url 'social:begin' 'facebook' %}">Login con facebook</a>
 {% endblock %}

@@ -18,7 +18,7 @@ class Order(models.Model):
         )["total"] or FloatField(0)
 
     def __str__(self):
-        return self.id
+        return str(self.id)
 
     class Meta:
         db_table = 'orders'
