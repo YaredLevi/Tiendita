@@ -1,15 +1,15 @@
+
 body{
     background-color: white;
 }
 
-
+/*
 .btn{
     position: absolute;
     top: 011cm;
     left: 2em;
 }
-
-
+*/
 #centrarh{
 text-align: center;
 }
@@ -31,6 +31,7 @@ text-align: center;
     background-color: whitesmoke;
 }
 
+
 html,
 body {
     margin: 0px;
@@ -43,12 +44,12 @@ body {
     min-height: calc(50% - 81px);
     position: relative;
 }
- 
+
+
 header {
     color: white;
     background-color: #0086CD;
 }
-
 
 
 footer{
