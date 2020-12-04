@@ -3,13 +3,13 @@ body{
     background-color: white;
 }
 
-/*
-.btn{
+
+#progeria{
     position: absolute;
     top: 011cm;
     left: 2em;
 }
-*/
+
 #centrarh{
 text-align: center;
 }
@@ -55,4 +55,12 @@ header {
 footer{
     background-color: black;
     color: white;
+}
+
+.card-footer {
+    min-height: 12%;
+}
+
+.card{
+    min-height: 12%;
 }
