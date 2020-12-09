@@ -15,6 +15,8 @@
         <button type="submit" class="btn btn-success">Iniciar sesión!</button>
         <a href="{% url 'social:begin' 'facebook' %}" 
              class="btn btn-primary" role="button">Facebook login</a>
+        <a href="{% url 'social:begin' 'google-oauth2' %}" 
+             class="btn btn-light" role="button">Google login</a>
     </form>
 
     <div></div>

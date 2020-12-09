@@ -62,7 +62,10 @@ ROOT_URLCONF = 'app.urls'
 
 SOCIAL_AUTH_FACEBOOK_KEY = '237044684663049'
 SOCIAL_AUTH_FACEBOOK_SECRET = '34908d1d7a1ef54bd0136ac1d2612a85'
-
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '167999365441-i4k8fd6kt9pm2sm9g27aqvp7v2feso8l.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET= 'WuYbM6BPFL6EBuA37ZMrsD1r'
+LOGIN_REDIRECT_URL='/'
+LOGOUT_REDIRECT_URL='/'
 
 TEMPLATES = [
     {
@@ -73,6 +76,7 @@ TEMPLATES = [
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
+                'django.template.context_processors.media',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'social_django.context_processors.backends',
@@ -160,5 +164,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.facebook.FacebookOAuth2',
+    'social_core.backends.google.GoogleOAuth2',
     'django.contrib.auth.backends.ModelBackend',
 )
