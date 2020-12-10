@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .models import Product
 from .forms import PoleraForm
@@ -33,3 +33,8 @@ def agregar(request):
             data['msg'] = "Guardado de forma exitosa."
             
     return render(request, "products/agregar.html", data)
+
+def eliminar(request, id):
+    polera = Product.objects.get(id=id)
+    polera.delete()
+    return redirect(to="read")

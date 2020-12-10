@@ -1,6 +1,6 @@
 {% extends 'layouts/tienda.html' %}
 
-{% block title %}Read{% endblock %}
+{% block title %}Listado de poleras{% endblock %}
 
 {% block content %}
 
@@ -27,6 +27,9 @@
         <td>{{ p.price }}</td>
         <td>{{ p.available }}</td>
         <td>{{ p.category }}</td>
+        <td>
+            <a href="#" onclick="confirmarEliminar({{p.id}})">Eliminar</a>
+        </td>
     </tr>
 
     {% endfor %}
