@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth import get_user_model
-from django.db.models import F, Sum, FloatField
+from django.db.models import F, Sum, FloatField,IntegerField
 from products.models import Product
 
 User = get_user_model()
@@ -14,8 +14,8 @@ class Order(models.Model):
     @property
     def total(self):
         return self.orderline_set.aggregate(
-            total=Sum(F("product__price") * F("quantity"), output_field=FloatField())
-        )["total"] or FloatField(0)
+            total=Sum(F("product__price") * F("quantity"), output_field=IntegerField())
+        )["total"] or IntegerField(0)
 
     def __str__(self):
         return str(self.id)

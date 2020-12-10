@@ -31,7 +31,7 @@
                         >
                             -
                         </a>
-                        Total {{ value.price|multiply:value.quantity|money_format:"$" }}
+                        Total $ {{value.price|multiply:value.quantity}}
                     </td>
                 </tr>
            {% endfor %}
@@ -48,7 +48,7 @@
     <tfoot>
         <tr>
             <td colspan="3">
-                Total: {{ cart_total_amount|money_format:"$" }}
+                Total: ${{ cart_total_amount}}
             </td>
         </tr>
         {% if request.session.cart.items %}

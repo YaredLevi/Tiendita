@@ -67,7 +67,7 @@
         <tbody>
             <tr>
                 <td>{{ order.id }}</td>
-                <td>{{ order.total|money_format:"$" }}</td>
+                <td>${{ order.total}}</td>
                 <td>{{ order.created_at|date:'d/m/Y H:i' }}</td>
             </tr>
         </tbody>
@@ -88,8 +88,8 @@
                <tr class="text-center">
                     <td>{{ order_line.product.name }}</td>
                     <td>{{ order_line.quantity }}</td>
-                    <td>{{ order_line.product.price|money_format:"$" }}</td>
-                    <td>{{ order_line.product.price|multiply:order_line.quantity|money_format:"$" }}</td>
+                    <td>${{ order_line.product.price}}</td>
+                    <td>${{ order_line.product.price|multiply:order_line.quantity}}</td>
                 </tr>
             {% endfor %}
         </tbody>

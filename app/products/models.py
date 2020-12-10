@@ -24,7 +24,7 @@ class Product(models.Model):
     image = models.ImageField(upload_to='products/', blank=True)
     excerpt = models.TextField(max_length=200, verbose_name='Extracto')
     detail = models.TextField(max_length=1000, verbose_name='Información del producto')
-    price = models.FloatField()
+    price = models.IntegerField()
     available = models.BooleanField(default=True)
 
     def __str__(self):
