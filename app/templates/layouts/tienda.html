@@ -4,6 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %} - Zafiro</title>
+
+    {% load pwa %}
+    {% progressive_web_app_meta %}
+
     <link rel="shortcut icon" href={% static 'img/LOGO1.png' %}/>
     {% load static %}
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet"/>

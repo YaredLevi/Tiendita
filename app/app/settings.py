@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     # PAQUETES DEL PROYECTO
     'crispy_forms',
     'social_django',
+    'pwa',
     # MIS APPS
     'autenticacion',
     'products',
@@ -81,6 +82,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'social_django.context_processors.backends',
                 'social_django.context_processors.login_redirect',
+                'cart.context_processor.cart_total_amount',
             ],
         },
     },
@@ -167,3 +169,5 @@ AUTHENTICATION_BACKENDS = (
     'social_core.backends.google.GoogleOAuth2',
     'django.contrib.auth.backends.ModelBackend',
 )
+
+PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'serviceworker.js')

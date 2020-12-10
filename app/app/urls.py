@@ -9,7 +9,8 @@ urlpatterns = [
                   path('', include('products.urls')),
                   path('cart/', include('cart.urls')),
                   path('orders/', include('orders.urls')),
-                  path('oauth/', include('social_django.urls', namespace='social'))
+                  path('oauth/', include('social_django.urls', namespace='social')),
+                  path('', include('pwa.urls')),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
