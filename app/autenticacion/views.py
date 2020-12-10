@@ -3,6 +3,7 @@ from django.views.generic import View
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib import messages
 from django.contrib.auth import login, logout, authenticate
+from .forms import CustomUserForm
 
 
 def acceder(request):
@@ -28,17 +29,17 @@ def acceder(request):
 class VistaRegistro(View):
     # noinspection PyMethodMayBeStatic
     def get(self, request):
-        form = UserCreationForm()
+        form = CustomUserForm()
         return render(request, "autenticacion/registro.html", {"form": form})
 
     # noinspection PyMethodMayBeStatic
     def post(self, request):
-        form = UserCreationForm(request.POST)
+        form = CustomUserForm(request.POST)
         if form.is_valid():
             usuario = form.save()
             nombre_usuario = form.cleaned_data.get("username")
             messages.success(request, F"Bienvenid@ a la plataforma {nombre_usuario}")
-            login(request, usuario)
+            login(request, usuario, backend='django.contrib.auth.backends.ModelBackend')
             return redirect("listado_productos")
         else:
             for msg in form.error_messages:
